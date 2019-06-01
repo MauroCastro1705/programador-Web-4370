@@ -1,10 +1,10 @@
 // Desafio
 
-var genero = prompt('Indique su Genero');
-var edad = prompt('Introduzca su edad');
+genero = prompt('Indique su Genero');
+edad = prompt('Introduzca su edad');
 
-var generoA;
-var edadA;
+generoA;
+edadA;
 
 edad = parseInt(edad);
 genero = genero.toLocaleLowerCase();
@@ -13,13 +13,13 @@ genero = genero.toLocaleLowerCase();
 
 switch (genero) {
   case 'hombre':
-    var generoA = 'Sr.'; //hombre
+    generoA = 'Sr.'; //hombre
     break;
   case 'mujer':
-    var generoA = 'Srta.';//mujer
+    generoA = 'Srta.';//mujer
 
   default:
-    var generoA = 'Sx.';// otro
+    generoA = 'Sx.';// otro
     break;
 }
 
@@ -27,11 +27,11 @@ switch (genero) {
 
 if (edad > 18) {
 
-  var edadA = 'usted es mayor de edad puede ingresar';// mayor
+  edadA = 'usted es mayor de edad puede ingresar';// mayor
 
 } else {
 
-  var edadA = 'usted es menor de edad no puede ingresar';// menor
+  edadA = 'usted es menor de edad no puede ingresar';// menor
 }
 
 ///// Respuesta de Consola /////
