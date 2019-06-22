@@ -1,14 +1,12 @@
-// js para mini ejercicio clase 8
-var tituloNuevo = prompt('Ingrese nuevo Titulo : ');
-var textoNuevo = prompt('Ingrese Texto Nuevo : ');
+// js ejercicio clase 8
 
-function cambio(tituloNuevo, textoNuevo) {
-  var newTitulo = document.getElementById('title');
-  newTitulo.innerHTML = tituloNuevo;
-  var newTexto = document.getElementById('text');
-  newTexto.innerHTML = textoNuevo;
+window.onload = function () {
+  var texts = ['Ed', 'Edd', 'Eddy']
+  var list = document.getElementById('mainList')
+  for (var i = 0; i < texts.length; i++) {
+    var item = document.createElement('li')
+    item.className = 'list-group-item'
+    item.innerHTML = texts[i]
+    list.appendChild(item)
+  }
 }
-
-
-
-cambio(tituloNuevo, textoNuevo);
