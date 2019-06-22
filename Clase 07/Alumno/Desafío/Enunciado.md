@@ -9,3 +9,9 @@ var studentsList = getLocalList('studentsList') // Debe devolver siempre un Arra
 [JSON.parse](https://www.w3schools.com/js/js_json_parse.asp)
 
 [localStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
+
+function(key)
+  buscar en localstorage
+    devolver el objeto
+    si no, return [vacio]
+      
