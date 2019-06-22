@@ -1,8 +1,8 @@
 // js desafio classe 6 astrings y arrays
 
 function includesText(textoA, textoB) {
-  textoA = textoA.toLowerCase;
-  textoB = textoB.toLowerCase;
+  textoA = textoA.toLowerCase();
+  textoB = textoB.toLowerCase();
 
   resultado = textoA.indexOf(textoB);
 
@@ -21,4 +21,18 @@ if (includesText(textoA, textoB)) {
   console.log('true');
 } else {
   console.log('false');
+}
+
+
+///
+
+function includesText(textoAEncontrar, textoTotal) {
+  var param1IsString = typeof textoAEncontrar === 'string';
+  var param2IsString = typeof textoTotal === 'string';
+  if (!param1IsString || !param2IsString) {
+    return false
+  }
+
+
+
 }
