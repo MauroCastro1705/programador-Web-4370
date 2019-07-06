@@ -6,7 +6,7 @@ function includesText(textoA, textoB) {
 
   resultado = textoA.indexOf(textoB);
 
-  if ((resultado > -1) && ((typeOf textoA === 'string') %% (typeOf textoB === 'string'))  ) {// tiene que ser -1 porqque sino no me tomaria la primer letra del texto ya que empieza a contar en 0
+  if ((resultado > -1) && ((typeOf textoA === 'string') && (typeOf textoB === 'string'))  ) {// tiene que ser -1 porqque sino no me tomaria la primer letra del texto ya que empieza a contar en 0
     return true
   }
   return false
@@ -21,18 +21,4 @@ if (includesText(textoA, textoB)) {
   console.log('true');
 } else {
   console.log('false');
-}
-
-
-///
-
-function includesText(textoAEncontrar, textoTotal) {
-  var param1IsString = typeof textoAEncontrar === 'string';
-  var param2IsString = typeof textoTotal === 'string';
-  if (!param1IsString || !param2IsString) {
-    return false
-  }
-
-
-
 }
