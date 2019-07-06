@@ -2,3 +2,11 @@
 window.onload = function () {
 
 }
+
+
+////jQuery
+
+$(document).ready(function () {
+
+
+});
