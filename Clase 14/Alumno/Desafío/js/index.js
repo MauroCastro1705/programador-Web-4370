@@ -9,7 +9,7 @@ $(document).ready(function () {
     var elemento = aBorrar.parent().next().next();
     console.log(elemento)
 
-    aBorrar.parent().parent().fadeOut(2000, function () {//animacion de fadeOut
+    aBorrar.parent().parent().fadeOut(1000, function () {//animacion de fadeOut
       aBorrar.parent().parent().remove();// remueve el elemento del DOM     
     })
   }
