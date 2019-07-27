@@ -1,33 +1,26 @@
 //controlador de personajes de la api (people)
 import { savePerson, isSaved } from '../utils/dataStore'
 import { translateToSpanish } from '../utils/diccionario'
-
+import { getId } from '../utils/utils'
 var nextPage
 var index
 var characters
 
-
 function peopleController() {
-  $('#root').load('./partials/people.html', function () {//carga el html de people
-    //trae la info de la api como callback
-    addEventToSeeMoreButton();
-    nextPage = 'https://swapi.co/api/people/'//actualiza la pagina cada vez
-    index = 1;
-    characters = {};
+  $('#root').load('./partials/people.html', function () {
+    addEventToSeeMoreButton()
+    nextPage = 'https://swapi.co/api/people/'
+    index = 1
+    characters = {}
     $.ajax(nextPage)
       .done(handleData)
-    //.fail(function () {
-
+    //.fail(function)
   })
-}//trae la data del local store
-
-function getId(person) {
-  return parseInt(person.url.split('/')[5])
 }
 
 function handleData(data) {
   var people = data.results
-  nextPage = data.next // toma el valor de la siguiete pagina de la API
+  nextPage = data.next
   console.log(data)
   for (var i = 0; i < people.length; i++) {
     var person = people[i];
@@ -37,13 +30,14 @@ function handleData(data) {
       renderPerson('#tableBody', person, id)
     }
   }
+
   if (!nextPage) {
     $('#seeMore').hide()
   }
   $('#seeMore').attr("disabled", false)
 }
 
-function renderPerson(anclaSelector, person, id) {//crea las filas de cada personaje
+function renderPerson(anclaSelector, person, id) {
   $(anclaSelector).append(`
       <tr id="person-${id}">
         <td scope="row">${id}</td>
@@ -59,11 +53,11 @@ function renderPerson(anclaSelector, person, id) {//crea las filas de cada perso
 }
 
 function addEventToSeeMoreButton() {
-  console.log('se llamó la fucion');
-  var button = $('#seeMore');
+  console.log('se llamo')
+  var button = $('#seeMore')
   button.click(function (event) {
     if (nextPage) {
-      button.attr("disabled", true)//desabilita el boton para uqe no se siga usando hasta que no carge la info
+      button.attr("disabled", true)
       $.ajax(nextPage)
         .done(handleData)
     }
@@ -85,4 +79,3 @@ function addEventToSaveButton(selector) {
 
 
 export default peopleController
-

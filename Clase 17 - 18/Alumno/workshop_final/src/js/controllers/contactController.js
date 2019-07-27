@@ -3,4 +3,8 @@ function contactController() {
   console.log('Se cargo el formulario de Contacto')
 }
 
+
+//completar de tarea para validar el formulario de contacto
+
+
 export default contactController

@@ -1,26 +1,21 @@
-//controlador de guardado de la api (people)
-import { savePerson, isSaved, dataStore } from '../utils/dataStore'
+import { savePerson, deletePerson, isSaved, dataStore } from '../utils/dataStore'
 import { translateToSpanish } from '../utils/diccionario'
+import { getId } from '../utils/utils'
+import { filterString } from './searchController'
 
 var nextPage
 var index
 var characters
 
-
 function savedController() {
-  $('#root').load('./partials/people.html', function () {//carga el html de people
+  $('#root').load('./partials/people.html', function () {
     var allKeys = Object.keys(dataStore)
     for (var i = 0; i < allKeys.length; i++) {
       var person = dataStore[allKeys[i]];
       var id = getId(person)
-      renderPerson('#tableBody', person.id)
-
+      renderPerson('#tableBody', person, id)
     }
   })
-}//trae la data del local store
-
-function getId(person) {
-  return parseInt(person.url.split('/')[5])
 }
 
 function renderPerson(anclaSelector, person, id) {

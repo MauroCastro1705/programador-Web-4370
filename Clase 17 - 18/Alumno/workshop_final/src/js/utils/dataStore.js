@@ -23,4 +23,8 @@ function isSaved(id) {
   return !!dataStore[id]
 }
 
-export { savePerson, isSaved, dataStore } 
+function deletePerson(id) {
+  delete dataStore[id]
+}
+
+export { savePerson, deletePerson, isSaved, dataStore } 

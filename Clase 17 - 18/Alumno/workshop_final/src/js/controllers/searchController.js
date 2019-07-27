@@ -1,12 +1,16 @@
-import { savePerson, isSaved, dataStore } from '../utils/dataStore'
+import { savePerson, isSaved } from '../utils/dataStore'
 import { translateToSpanish } from '../utils/diccionario'
+import { getId } from '../utils/utils'
+import savedController from './savedController'
+var filterString = ''
 
-searchController(){
+function searchController() {
   var button = $('#buttonSearch')
   var input = $('#inputSearch')
   button.click(function () {
-
+    filterString = input.val()
+    savedController()
   })
 }
 
-export default searchController
+export { searchController, filterString }
