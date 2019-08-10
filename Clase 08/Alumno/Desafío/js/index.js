@@ -1,14 +1,29 @@
-// js para mini ejercicio clase 8
-var tituloNuevo = prompt('Ingrese nuevo Titulo : ');
-var textoNuevo = prompt('Ingrese Texto Nuevo : ');
+window.onload = function () {
 
-function cambio(tituloNuevo, textoNuevo) {
-  var newTitulo = document.getElementById('title');
-  newTitulo.innerHTML = tituloNuevo;
-  var newTexto = document.getElementById('text');
-  newTexto.innerHTML = textoNuevo;
+  var student = {
+    firstName: 'Juan',
+    lastName: 'Peréz',
+    dni: 22999333,
+    email: 'juan@gmail.com'
+  };
+
+  var list = document.getElementById('lista'); //buscamos por # en el html
+
+  function createStudentNode(student) {
+    var li = document.createElement('li')
+    li.className = 'list-group-item' //agregamos la clase de bootstrap
+    var h1 = document.createElement('h1')
+    h1.innerHTML = student.firstName + ' ' + student.lastName
+    var h3 = document.createElement('h3')
+    h3.innerHTML = 'DNI: ' + student.dni
+    var p = document.createElement('p')
+    p.innerHTML = `E-mail: ${student.email}`
+    li.appendChild(h1)
+    li.appendChild(h3)
+    li.appendChild(p)
+    return li
+  }
+
+  list.appendChild(createStudentNode(student))
+
 }
-
-
-
-cambio(tituloNuevo, textoNuevo);
